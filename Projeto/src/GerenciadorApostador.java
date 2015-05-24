@@ -1,30 +1,38 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class GerenciadorApostador {
-
+public class GerenciadorApostador 
+{
 	private ArrayList<Apostador> apostadores;
 
-	private Apostador apostador;
-
-	public GerenciadorApostador() {
-
-	}
-
-	public void criarNovoApostador(String nome) {
-
+	public GerenciadorApostador() 
+	{
+		apostadores = new ArrayList<Apostador>();
+	
 	}
 
 	public void inserirApostador(Apostador apostador) {
-
- 
+		apostadores.add(apostador);
 	}
 
-	public void removerApostador(int id) {
-
+	public void removerApostador(int id) 
+	{
+		for(Iterator<Apostador> a = apostadores.iterator(); a.hasNext();) 
+		{
+		    Apostador apostador = a.next();
+		    if(apostador.getIdApostador() == id)
+		    {
+		    	apostadores.remove(apostador);
+		    }
+		}
 	}
 
-	public ArrayList<Apostador> encontrarApostadoresGanhadores() {
-		return null;
+	public ArrayList<Apostador> getApostadores() {
+		return apostadores;
+	}
+
+	public void setApostadores(ArrayList<Apostador> apostadores) {
+		this.apostadores = apostadores;
 	}
 
 }
