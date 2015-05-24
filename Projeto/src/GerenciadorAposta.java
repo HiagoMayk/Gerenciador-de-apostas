@@ -18,7 +18,7 @@ public class GerenciadorAposta
 
 	public void setApostas(ArrayList apostas) 
 	{
-		apostas = apostas;
+		this.apostas = apostas;
 	}
 
 	public void inserirAposta(Aposta aposta) 
