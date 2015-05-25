@@ -4,29 +4,12 @@
 import java.util.ArrayList;
 
 public class RegraJogo {
-
-<<<<<<< HEAD
-	private int quantMaxApostadores;
-	private int quantMaxApostas;
-	private int valorMinApostas;
-	private int valorMaxApostas;
-	private GerenciadorApostador gerenciadorApostadores;
-	private GerenciadorApostador gerenciadorApostador;
-=======
-	
 	static final int quantMaxApostadores = 40;
-
 	static final int quantMaxApostas = 2;
-
 	static final float valorMinApostas = 1;
-
 	static final float valorMaxApostas = 50;
-
 	private GerenciadorApostador gerenciadorApostadores;
-
->>>>>>> 0b91ed68e80d25189d363d2fcb678d7d6b42b051
 	private Resultado resultado;
-	
 	private ArrayList<String> objetos;
 
 	public void RegrasJogo() {	

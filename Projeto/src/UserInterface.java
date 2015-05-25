@@ -14,18 +14,14 @@ public class UserInterface
 	
 	public void iniciarInterface()
 	{	
-<<<<<<< HEAD
 		String nome, objetoAposta;
 		float valor;
 		int id, indexAposta;
 		
-=======
->>>>>>> 0b91ed68e80d25189d363d2fcb678d7d6b42b051
 		System.out.print("Digite o nome da instancia: ");
 		Scanner ler = new Scanner(System.in);
 		String s = ler.nextLine();
 		System.out.println("");
-<<<<<<< HEAD
 		
 		/*
 		System.out.print("digite um objeto de aposta: ");
@@ -54,23 +50,10 @@ public class UserInterface
 			System.out.println("Sair: ------------------------ 0");
 			System.out.println("");
 			System.out.print(">>> ");
-=======
-				
-		while(true)
-		{
-			System.out.println("========= Gerenciador de Apostas: " + s + " =========");
-			System.out.println("Novo apostador: ------ 1");
-			System.out.println("Nova aposta ---------- 2");
-			System.out.println("Listar Apostadores --- 3");
-			System.out.println("Ver resultado -------- 4");
-			System.out.println("Sair ----------------- 0");
-			System.out.println("");
->>>>>>> 0b91ed68e80d25189d363d2fcb678d7d6b42b051
 			
 			int opcao = ler.nextInt();
 			switch(opcao){
 				case 1: 
-<<<<<<< HEAD
 						System.out.println("Nome do apostador: ");
 						System.out.print(">>> ");
 						ler = new Scanner(System.in);
@@ -83,25 +66,12 @@ public class UserInterface
 						
 						System.out.println("Valor apostado: ");
 						System.out.print(">>> ");
-=======
-						String nome, objetoAposta;
-						float valor;
-						System.out.print("Nome do apostador: ");
-						ler = new Scanner(System.in);
-						nome = ler.nextLine();
-						
-						System.out.print("Objeto de aposta ");
-						ler = new Scanner(System.in);
-						objetoAposta = ler.nextLine();
-						
-						System.out.print("Valor apostado: ");
->>>>>>> 0b91ed68e80d25189d363d2fcb678d7d6b42b051
+
 						ler = new Scanner(System.in);
 						valor = ler.nextFloat();
 						
 						novoApostador(nome, valor, objetoAposta);
 						break;	
-<<<<<<< HEAD
 				case 2: 
 						System.out.println("Digite o id do apostador: ");
 						System.out.print(">>> ");;
@@ -151,15 +121,6 @@ public class UserInterface
 				case 0: System.exit(1);;
 				default:
 					System.out.println("Digite um numero válido");
-=======
-				case 2: ;
-				case 3: 
-						listar();
-						break;
-				case 0: System.exit(1);;
-				default:
-					System.out.println("Digite um numero vÃ¡lido");
->>>>>>> 0b91ed68e80d25189d363d2fcb678d7d6b42b051
 			}
 		}
 	}
@@ -167,12 +128,8 @@ public class UserInterface
 	public void novoApostador(String nome, float valor, String objeto) 
 	{
 		int idNovo = gerenciadorApostador.novoApostador(nome, objeto, valor);
-<<<<<<< HEAD
 		novaAposta(idNovo, valor, objeto);
 		//String n = gerenciadorApostador.getApostador(idNovo).getNome();
-=======
-		novaAposta(idNovo, valor, objeto);		
->>>>>>> 0b91ed68e80d25189d363d2fcb678d7d6b42b051
 		System.out.print("Passou! ");
 	}
 
@@ -188,7 +145,6 @@ public class UserInterface
 	
 	public void listar()
 	{
-<<<<<<< HEAD
 		System.out.println("ID \t NOME \t APOSTAS");
 		for(int i = 0; i < gerenciadorApostador.getApostadores().size(); i++)
 		{	
@@ -205,13 +161,6 @@ public class UserInterface
 			}
 			System.out.println("");
 		}
-
-=======
-		for(int i = 0; i < gerenciadorApostador.getApostadores().size(); i++) 
-		{
-			System.out.println(gerenciadorApostador.getApostadores().get(i).getNome());
-		}
->>>>>>> 0b91ed68e80d25189d363d2fcb678d7d6b42b051
 	}
 	
 	public static void main(String args[]) throws IOException
