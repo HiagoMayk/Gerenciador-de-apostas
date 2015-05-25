@@ -5,8 +5,6 @@ public class Premiacao {
 
 	private Apostador apostador;
 
-	private Apostador apostador;
-
 	public Premiacao() {
 
 	}

@@ -61,4 +61,7 @@ public class GerenciadorApostador
 		
 		return null;
 	}
+<<<<<<< HEAD
 }
+=======
+>>>>>>> 0b91ed68e80d25189d363d2fcb678d7d6b42b051
