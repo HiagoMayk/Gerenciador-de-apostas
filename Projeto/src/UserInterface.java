@@ -66,6 +66,7 @@ public class UserInterface
 						
 						System.out.println("Valor apostado: ");
 						System.out.print(">>> ");
+
 						ler = new Scanner(System.in);
 						valor = ler.nextFloat();
 						
@@ -160,7 +161,6 @@ public class UserInterface
 			}
 			System.out.println("");
 		}
-
 	}
 	
 	public static void main(String args[]) throws IOException

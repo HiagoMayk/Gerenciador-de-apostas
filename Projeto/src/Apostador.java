@@ -6,7 +6,8 @@ public class Apostador
 	private int idApostador;
 	private ArrayList<Aposta> apostas;
 	
-	public Apostador(String nome, int idApostador, String objeto, float valor)
+
+	public Apostador(String nome, int idApostador, String objeto, float valor) 
 	{
 		this.nome = nome;
 		this.idApostador = idApostador;
@@ -44,9 +45,15 @@ public class Apostador
 	}
 
 	public void inserirAposta(String objeto, float valor) 
-	{
+	{	
+		RegraJogo regra = new RegraJogo();
+		
 		Aposta novaAposta = new Aposta(objeto, valor);
-		apostas.add(novaAposta);
+		
+		if (regra.validaAposta(novaAposta, apostas.size())){	
+			apostas.add(novaAposta);
+		}
+		else System.out.println("APOSTA INVALIDA");
 	}
 
 	public void removerAposta(int index) 
