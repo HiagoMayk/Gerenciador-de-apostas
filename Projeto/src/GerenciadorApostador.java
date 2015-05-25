@@ -27,16 +27,18 @@ public class GerenciadorApostador
 		apostadores.add(apostador);
 	}
 
-	public void removerApostador(int id) 
+	public void removerApostador(int idApostador) 
 	{
-		for(Iterator<Apostador> a = apostadores.iterator(); a.hasNext();) 
+		if(apostadores.size() > 0)
 		{
-		    Apostador apostador = a.next();
-		    if(apostador.getIdApostador() == id)
-		    {
-		    	apostadores.remove(apostador);
-		    }
-		}
+			for(int i = 0; i < apostadores.size(); i++) 
+			{
+				if(apostadores.get(i).getIdApostador() == idApostador)
+			    {
+			    	apostadores.remove(apostadores.get(i));
+			    }
+			}
+		}		
 	}
 
 	public ArrayList<Apostador> getApostadores() {

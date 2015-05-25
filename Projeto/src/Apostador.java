@@ -6,7 +6,7 @@ public class Apostador
 	private int idApostador;
 	private ArrayList<Aposta> apostas;
 	
-	public Apostador(String nome, int idApostador, String objeto, float valor) 
+	public Apostador(String nome, int idApostador, String objeto, float valor)
 	{
 		this.nome = nome;
 		this.idApostador = idApostador;
@@ -51,8 +51,10 @@ public class Apostador
 
 	public void removerAposta(int index) 
 	{
-		    apostas.remove(apostas.get(index));
-		
+		if(!(apostas.size() < index || index < 0))
+		{
+			apostas.remove(apostas.get(index));
+		}
 	}
 	
 }
