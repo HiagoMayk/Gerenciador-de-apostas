@@ -1,17 +1,12 @@
 public class Aposta 
 {
 	private ObjetoAposta objeto;
-
 	private float valor;
-
-	private int idAposta;
-
 	
-	public Aposta(ObjetoAposta objeto, float valor, int idAposta) 
+	public Aposta(String obj, float valor) 
 	{
-		this.objeto = objeto;
+		objeto = new ObjetoAposta(obj);
 		this.valor = valor;
-		this.idAposta = idAposta;
 	}
 
 	public ObjetoAposta getObjeto() 
@@ -34,13 +29,4 @@ public class Aposta
 		this.valor = valor;
 	}
 
-	public int getIdAposta() 
-	{
-		return idAposta;
-	}
-
-	public void setIdAposta(int idAposta) 
-	{
-		this.idAposta = idAposta;
-	}
 }

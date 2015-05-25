@@ -1,38 +1,16 @@
-
-
 import java.util.ArrayList;
 
 public class Apostador
 {
 	private String nome;
-	private int idApostas = 0;
-
 	private int idApostador;
-
-	private GerenciadorAposta gerenciadorAposta;
+	private ArrayList<Aposta> apostas;
 	
-	public Apostador(String nome, int idApostador) 
+	public Apostador(String nome, int idApostador, String objeto, float valor) 
 	{
 		this.nome = nome;
-		this.idApostador = idApostador;		
-	}
-	
-	public void incrementarIdApostas(){
-		
-		idApostas ++;
-	}
-
-	public void novaAposta(ObjetoAposta objeto, float valor) 
-	{
-		Aposta novaAposta = new Aposta(objeto, valor, idApostas);
-		incrementarIdApostas();
-		//VERIFICAR E VALIADAR APOSTAS
-		gerenciadorAposta.inserirAposta(novaAposta);
-	}
-
-	public ArrayList<Aposta> apostasApostador() 
-	{
-		return gerenciadorAposta.getApostas();
+		this.idApostador = idApostador;
+		apostas = new ArrayList<Aposta>();
 	}
 	
 	public String getNome() 
@@ -55,13 +33,26 @@ public class Apostador
 		this.idApostador = idApostador;
 	}
 
-	public GerenciadorAposta getGerenciadorApostas() 
+	public ArrayList<Aposta> getApostas() 
 	{
-		return gerenciadorAposta;
+		return apostas;
 	}
 
-	public void setGerenciadorApostas(GerenciadorAposta gerenciadorAposta) 
+	public void setApostas(ArrayList apostas) 
 	{
-		this.gerenciadorAposta = gerenciadorAposta;
+		this.apostas = apostas;
 	}
+
+	public void inserirAposta(String objeto, float valor) 
+	{
+		Aposta novaAposta = new Aposta(objeto, valor);
+		apostas.add(novaAposta);
+	}
+
+	public void removerAposta(int index) 
+	{
+		    apostas.remove(apostas.get(index));
+		
+	}
+	
 }
