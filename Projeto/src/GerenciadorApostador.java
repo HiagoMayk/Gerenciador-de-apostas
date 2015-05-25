@@ -16,10 +16,11 @@ public class GerenciadorApostador
 		id ++;
 	}
 	
-	public void novoApostador( String nome ) {
-		Apostador apostador = new Apostador(nome, id);
+	public int novoApostador( String nome, String objeto, float valor) {
+		Apostador apostador = new Apostador(nome, id, objeto, valor);
 		incrementaID();
 		inserirApostador(apostador);
+		return apostador.getIdApostador();
 	}
 
 	public void inserirApostador(Apostador apostador) {
@@ -45,4 +46,16 @@ public class GerenciadorApostador
 	public void setApostadores(ArrayList<Apostador> apostadores) {
 		this.apostadores = apostadores;
 	}
-}
+	
+	public Apostador getApostador(int idApostador) 
+	{
+		for(int i = 0; i < apostadores.size(); i++) 
+		{
+			if(apostadores.get(i).getIdApostador() == idApostador)
+		    {
+		    	return apostadores.get(i);
+		    }
+		}
+		
+		return null;
+	}
