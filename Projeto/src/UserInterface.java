@@ -25,7 +25,7 @@ public class UserInterface
 		
 		/*
 		System.out.print("digite um objeto de aposta: ");
-		ler = new Scanner(System.in);
+		ler = new Scanner(Syste, om.in);
 		objetoAposta = ler.nextLine();
 		
 		while(objetoAposta != "-1")// Gigitar -1 pra sair
