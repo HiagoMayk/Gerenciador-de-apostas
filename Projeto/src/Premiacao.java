@@ -1,28 +1,23 @@
+import java.util.ArrayList;
 
-public class Premiacao {
-
-	private float premio;
-
-	private Apostador apostador;
-
-	public Premiacao() {
-
+public class Premiacao 
+{
+	private ArrayList<Premio> premios;
+	
+	public Premiacao() 
+	{
+		premios = new ArrayList<Premio>();
 	}
 
-	public float getPremio() {
-		return premio;
+	public ArrayList<Premio> getPremios() 
+	{
+		return premios;
 	}
 
-	public void setPremio(float premio) {
-		this.premio = premio;
+	public void setPremios(ArrayList<Premio> premios) 
+	{
+		this.premios = premios;
 	}
-
-	public Apostador getApostador() {
-		return apostador;
-	}
-
-	public void setApostador(Apostador apostador) {
-		this.apostador = apostador;
-	}
-
+	
+	
 }

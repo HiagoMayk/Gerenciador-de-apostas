@@ -4,14 +4,13 @@ public class Apostador
 {
 	private String nome;
 	private int idApostador;
-	private ArrayList<Aposta> apostas;
-	
+	private GerenciadorAposta gerenciadorAposta;
 
-	public Apostador(String nome, int idApostador, String objeto, float valor) 
+	public Apostador(String nome, int idApostador) 
 	{
 		this.nome = nome;
 		this.idApostador = idApostador;
-		apostas = new ArrayList<Aposta>();
+		gerenciadorAposta = new GerenciadorAposta();
 	}
 	
 	public String getNome() 
@@ -33,35 +32,9 @@ public class Apostador
 	{
 		this.idApostador = idApostador;
 	}
-
-	public ArrayList<Aposta> getApostas() 
-	{
-		return apostas;
-	}
-
-	public void setApostas(ArrayList apostas) 
-	{
-		this.apostas = apostas;
-	}
-
-	public void inserirAposta(String objeto, float valor) 
-	{	
-		RegraJogo regra = new RegraJogo();
-		
-		Aposta novaAposta = new Aposta(objeto, valor);
-		
-		if (regra.validaAposta(novaAposta, apostas.size())){	
-			apostas.add(novaAposta);
-		}
-		else System.out.println("APOSTA INVALIDA");
-	}
-
-	public void removerAposta(int index) 
-	{
-		if(!(apostas.size() < index || index < 0))
-		{
-			apostas.remove(apostas.get(index));
-		}
-	}
 	
+	public GerenciadorAposta getGerenciadorAposta()
+	{
+		return gerenciadorAposta;
+	}
 }

@@ -6,7 +6,7 @@ public class GerenciadorApostador
 	private ArrayList<Apostador> apostadores;
 	private int id = 0;
 
-	public GerenciadorApostador() 
+	public GerenciadorApostador()
 	{
 		apostadores = new ArrayList<Apostador>();	
 	}
@@ -16,20 +16,22 @@ public class GerenciadorApostador
 		id ++;
 	}
 	
-	public int novoApostador( String nome, String objeto, float valor) {
-		Apostador apostador = new Apostador(nome, id, objeto, valor);
+	//Pode-se inserir um apostador sem ele ter uma aposta associada, porém toda aposta deve ter um apostador associado
+	public void novoApostador(String nome) 
+	{
+		Apostador apostador = new Apostador(nome, id);
 		incrementaID();
 		inserirApostador(apostador);
-		return apostador.getIdApostador();
 	}
 
 	public void inserirApostador(Apostador apostador) {
 		apostadores.add(apostador);
 	}
-
-	public void removerApostador(int idApostador) 
+	
+	//Remove apostador pelo seu id
+	public void removerApostador(int idApostador)
 	{
-		if(apostadores.size() > 0)
+		if(apostadores.size() > 0) //Verifica se existe algum apostador
 		{
 			for(int i = 0; i < apostadores.size(); i++) 
 			{
@@ -49,6 +51,7 @@ public class GerenciadorApostador
 		this.apostadores = apostadores;
 	}
 	
+	//Retorna um apostador pelo seu id
 	public Apostador getApostador(int idApostador) 
 	{
 		for(int i = 0; i < apostadores.size(); i++) 
