@@ -1,5 +1,5 @@
 
-public class GerenciadorResultado 
+public class GerenciadorResultado implements IGerenciadorResultado
 {
 	Resultado resultado;
 	

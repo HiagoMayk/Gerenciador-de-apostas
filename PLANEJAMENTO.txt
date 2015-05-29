@@ -1,0 +1,17 @@
+Planejamento de desenvolvimento do projeto
+
+—————————— A CUMPRIR ——————————
+
+Implementar instancia Corriga de Cavalos
+Implementar intancia Jogo da roleta
+Definir padrões de Projeto
+Implementar DAO
+
+
+—————————— EM ANDAMENTO ——————————
+Implementar instancia Jogo de Dados
+
+
+—————————— CUMPRIDO ——————————
+Implementação de ponstos fixos
+Implementação funcionalidades básicas do framework

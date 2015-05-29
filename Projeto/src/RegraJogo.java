@@ -3,7 +3,7 @@
 
 import java.util.ArrayList;
 
-public abstract class RegraJogo 
+public abstract class RegraJogo implements IRegraJogo
 {
 	private int quantMaxApostadores;
 	private int quantMaxApostas;
@@ -13,7 +13,7 @@ public abstract class RegraJogo
 	private ArrayList<ObjetoAposta> objetos;
 	private Premiacao premiacao;
 	
-	public void RegrasJogo() 
+	public void RegrasJogo()
 	{	
 		objetos = new ArrayList<ObjetoAposta>();
 		premiacao = new Premiacao();
@@ -54,7 +54,7 @@ public abstract class RegraJogo
 		return true;
 	}
 
-	public ArrayList<Premio> verificarRegrasPremiacao(GerenciadorApostador gerenciadorApostadores) {
+	public ArrayList<Premio> aplicarRegrasPremiacao(GerenciadorApostador gerenciadorApostadores) {
 		return premiacao.getPremios();
 	}
 
