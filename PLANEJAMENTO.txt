@@ -9,9 +9,11 @@ Implementar DAO
 
 
 —————————— EM ANDAMENTO ——————————
-Implementar instancia Jogo de Dados
-
+Reestruturar instância 1
+Criar estrutura do framework a partir da inst1
 
 —————————— CUMPRIDO ——————————
 Implementação de ponstos fixos
 Implementação funcionalidades básicas do framework
+Implementar instancia Jogo de Dados
+
