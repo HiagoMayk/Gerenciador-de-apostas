@@ -14,7 +14,6 @@ public abstract class RegraJogo implements IRegraJogo
 	private GerenciadorResultado gerenciadorResultado;
 	private ArrayList<Apostador> apostadores;
 	
-	
 	public void RegrasJogo()
 	{	
 		objetos = new ArrayList<ObjetoAposta>();
@@ -105,31 +104,25 @@ public abstract class RegraJogo implements IRegraJogo
 		return apostadores;
 	}
 	
-	public void aplicarRegraJogo() 
+	public boolean aplicarRegraJogo() 
 	{
-
+		return true;
 	}
 	
 	//Implementação da instancia
-	public boolean verificarRegrasAposta(Aposta aposta, int quant) 
+	public boolean verificarRegrasAposta() 
 	{
 		return true;
 	}
 	
 	//Implementação da instancia 
-	public boolean verificarManeiraAposta(Aposta aposta, GerenciadorApostador gerenciadorApostadores) 
+	public boolean verificarManeiraAposta() 
 	{
 		return true;
 	}
 	
 	//Implementação da instancia 
-	public boolean validaAposta(Aposta aposta, int quant, GerenciadorApostador gerenciadorApostador) 
-	{
-		return true;
-	}
-
-	//Implementação da instancia 
-	public ArrayList<Premio> aplicarRegrasPremiacao(GerenciadorApostador gerenciadorApostadores) 
+	public ArrayList<Premio> getTabelaPremiacao() 
 	{
 		return premiacao.getPremios();
 	}
