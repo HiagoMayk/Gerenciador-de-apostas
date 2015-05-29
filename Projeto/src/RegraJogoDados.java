@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class RegraJogoDados extends RegraJogo 
 {
 	public RegraJogoDados()
-	{	
+	{			
 		//Esse código vai deposi para o Regrajogo Abstrato
 		IO io = new EntradaSaida();
 		
@@ -16,79 +16,90 @@ public class RegraJogoDados extends RegraJogo
 		super.setApostadores(io.getApostadores());
 	}
 	
-	public void aplicarRegraJogo() 
+	public boolean aplicarRegraJogo()
 	{
-		//implementar
-	}
-	
-	//Regras gerais de apostas
-	public boolean verificarRegrasAposta(Aposta aposta, int quant) {
-		/*
-		if (quantMaxApostas < quant){
-			return false;
-		}	
-		
-		if (aposta.getValor() < valorMinApostas || valorMaxApostas < aposta.getValor() ){
-		
-			return false;			
-		}
-		
-		System.out.println("aquiiiiii");
-		//O erro está aquiiii
-		for(int i=0; i < objetos.size(); i++)
-		{
-			if(objetos.get(i).equals(aposta.getObjeto().getNome()))
-			{
-				
-			}
-		}
-		
-		return false;	
-		*/
-		return true;
-	}
-	
-	//Não pode apostar no mesmo objeto que outra pessoa já tenha apostado
-	public boolean verificarManeiraAposta(Aposta aposta, GerenciadorApostador gerenciadorApostadores) {
-		/*
-		for(int i = 0; i < gerenciadorApostadores.getApostadores().size(); i++)
-		{
-			if(aposta.getObjeto().equals(gerenciadorApostadores.getApostadores().get(i).getApostas().get(0))){
-				return true;
-			}
-		}
-		return false;
-		*/
-		return true;
-	}
-
-	public boolean validaAposta(Aposta aposta, int quant, GerenciadorApostador gerenciadorApostador) 
-	{
-		/*
-		if(verificarRegrasAposta(aposta, quant) && verificarManeiraAposta(aposta, gerenciadorApostador))
+		if((verificarRegrasAposta() && verificarManeiraAposta()) == true)
 		{
 			return true;
 		}
-		return false;	
-		*/
+		return false;
+	}
+	
+	//Regras gerais de apostas
+	public boolean verificarRegrasAposta() 
+	{
+		boolean pertence = true;
+		
+		for(int i = 0; i < getApostadores().size(); i++)
+		{
+			//Se a quantidade de apostas é maior que o minimo possível
+			if (getQuantMaxApostas() < getApostadores().get(i).getGerenciadorAposta().getApostas().size())
+			{
+				return false;
+			}
+			
+			//Se o valor das apostas está na faixa determinada
+			for(int j = 0; j < getApostadores().get(i).getGerenciadorAposta().getApostas().size(); j++)
+			{
+				if (getApostadores().get(i).getGerenciadorAposta().getApostas().get(j).getValor() < getValorMinApostas() ||
+					getValorMaxApostas() < getApostadores().get(i).getGerenciadorAposta().getApostas().get(j).getValor())
+				{
+					return false;	
+				}
+				
+				pertence = false;
+				//Se as apostas do usuário está no domínio de objetos de aposta do jogo
+				for(int k = 0; k < getObjetosAposta().size(); k++)
+				{
+					if(getObjetosAposta().get(k).getNome().equals(getApostadores().get(i).getGerenciadorAposta().getApostas().get(j).getObjeto().getNome()))
+					{
+						pertence = true;
+					}	
+				}
+				
+				if(pertence == false){
+					return false;
+				}
+			}
+		}
+		return true && pertence;
+	}
+	
+	//Não pode apostar no mesmo objeto que outra pessoa já tenha apostado
+	public boolean verificarManeiraAposta() 
+	{
+		boolean pertence = true;
+
+		for(int i = 0; i < getApostadores().size(); i++)
+		{
+			for(int l = 0; l < getApostadores().size(); l++)
+			{
+				for(int j = 0; j < getApostadores().get(i).getGerenciadorAposta().getApostas().size(); j++)
+				{
+					pertence = true;
+					if(i != l) //Não deve comparar com ele mesmo
+					{
+						for(int k = 0; k < getApostadores().get(l).getGerenciadorAposta().getApostas().size(); k++)
+						{
+							if(getApostadores().get(i).getGerenciadorAposta().getApostas().get(j).getObjeto().getNome().equals(getApostadores().get(l).getGerenciadorAposta().getApostas().get(k).getObjeto().getNome()))
+							{
+								pertence =  false;
+							}
+						}
+						if(pertence == false){
+							return false;
+						}
+					}
+				}
+			}
+		}
 		return true;
 	}
 
 	//Retorna um array list com a ordem da premiação (valores) - no caso só 1 valor pois só um ganha
-	public ArrayList<Premiacao> verificarRegrasPremiacao(GerenciadorApostador gerenciadorApostadores) {
-		/*Premiacao premio = new Premiacao();
-		ArrayList premios =  new ArrayList<Premiacao>();
-		float valor = 0;
-		
-		for(int i = 0; i<gerenciadorApostadores.getApostadores().size(); i++)
-		{
-			valor += gerenciadorApostadores.getApostadores().get(i).getApostas().get(0).getValor();
-		}
-		
-		premio.setPremio(valor);
-		premios.add(premio);
-		*/
-		return null;
+	public ArrayList<Premio> getTabelaPremiacao() 
+	{
+		return super.getTabelaPremiacao();
 	}
 		
 	public int getQuantMaxApostadores() 
