@@ -1,7 +1,7 @@
 
 public class GerenciadorResultado implements IGerenciadorResultado
 {
-	Resultado resultado;
+	private Resultado resultado;
 	
 	public GerenciadorResultado() 
 	{

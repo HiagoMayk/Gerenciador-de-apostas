@@ -4,16 +4,32 @@ import java.util.Scanner;
 
 public class UserInterface 
 {
-	private GerenciadorApostador gerenciadorApostador;
-	private Resultado resultado;
+	//private GerenciadorApostador gerenciadorApostador;
+	private GerenciadorResultado gerenciadorResultado;
+	private RegraJogo regraJogo;
 	
 	public UserInterface()
 	{
-		gerenciadorApostador = new GerenciadorApostador();
+		regraJogo = new RegraJogoDados();
+		//gerenciadorApostador = new GerenciadorApostador();
+		gerenciadorResultado = new GerenciadorResultado();
 	}
 	
 	public void iniciarInterface()
 	{	
+		regraJogo.aplicarRegraJogo(); //Falta implementar
+		
+		System.out.println("Objetos APOSTA");
+		
+		for(int i = 0; i < regraJogo.getObjetosAposta().size(); i++)
+		{	
+			//System.out.println(regraJogo.getObjetosAposta().get(i).getNome());
+		}
+		
+		/*
+		 * primeira implementação
+		 * 
+		 * 
 		String nome, objetoAposta;
 		float valor;
 		int id, indexAposta;
@@ -23,8 +39,13 @@ public class UserInterface
 		String s = ler.nextLine();
 		System.out.println("");
 		
+		
+		
+		
 		while(true)
 		{
+			
+			 
 			System.out.println("");
 			System.out.println("========= Gerenciador de Apostas: " + s + " =========");
 			System.out.println("Novo apostador: -------------- 1");
@@ -39,7 +60,8 @@ public class UserInterface
 			
 			int opcao = ler.nextInt();
 			switch(opcao){
-				case 1: //Novo apostador
+			 
+			case 1: //Novo apostador
 						System.out.println("Nome do apostador: ");
 						System.out.print(">>> ");
 						ler = new Scanner(System.in);
@@ -95,8 +117,12 @@ public class UserInterface
 				default:
 					System.out.println("Digite um numero válido");
 					break;
+					
+				
 			}
+			
 		}
+		
 	}
 
 	public void novoApostador(String nome) 
@@ -133,8 +159,10 @@ public class UserInterface
 			}
 			System.out.println("");
 		}
+		*/
 	}
 	
+		
 	public static void main(String args[]) throws IOException
 	{
 		UserInterface u = new UserInterface();

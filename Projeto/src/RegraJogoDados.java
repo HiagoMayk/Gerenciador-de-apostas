@@ -1,47 +1,22 @@
 import java.util.ArrayList;
 
-
-public class RegraJogoDados extends RegraJogo {
-	
-	static final int quantMaxApostadores = 6;
-	static final int quantMaxApostas = 1;
-	static final float valorMinApostas = 1;
-	static final float valorMaxApostas = 50;
-	private Resultado resultado;
-	private ArrayList<String> objetos;
-
-	public void RegrasJogo() {	
-		objetos = new ArrayList<String>();
-		
-		//Adiciona os objetos da aposta
-		objetos.add("1");
-		objetos.add("2");
-		objetos.add("3");
-		objetos.add("4");
-		objetos.add("5");
-		objetos.add("6");
-							
+public class RegraJogoDados extends RegraJogo 
+{
+	public void RegrasJogo()
+	{	
+		//Esse código vai deposi para o Regrajogo Abstrato
+		IO io = new EntradaSaida();
+		super.setQuantMaxApostadores(io.quantMaxApostadores());
+		super.setQuantMaxApostas(io.quantMaxApostas());
+		super.setValorMaxApostas(io.valorMaxApostas());
+		super.setValorMinApostas(io.valorMinApostas());
+		super.setObjetosAposta(io.getObjetosAposta());
+		super.setTabelaPremiacao(io.getTebelaPremiacao());
 	}
 	
-	public int getQuantMaxApostadores() {
-		return quantMaxApostadores;
-	}
-
-		public int getQuantMaxApostas() {
-		return quantMaxApostas;
-	}
-
-	
-	public float getValorMinApostas() {
-		return valorMinApostas;
-	}
-
-	public float getValorMaxApostas() {
-		return valorMaxApostas;
-	}
-
-	public void aplicarRegraJogo() {
-
+	public void aplicarRegraJogo() 
+	{
+		//implementar
 	}
 	
 	//Regras gerais de apostas
@@ -99,7 +74,7 @@ public class RegraJogoDados extends RegraJogo {
 
 	//Retorna um array list com a ordem da premiação (valores) - no caso só 1 valor pois só um ganha
 	public ArrayList<Premiacao> verificarRegrasPremiacao(GerenciadorApostador gerenciadorApostadores) {
-		Premiacao premio = new Premiacao();
+		/*Premiacao premio = new Premiacao();
 		ArrayList premios =  new ArrayList<Premiacao>();
 		float valor = 0;
 		
@@ -110,6 +85,38 @@ public class RegraJogoDados extends RegraJogo {
 		
 		premio.setPremio(valor);
 		premios.add(premio);
-		return premios;
+		*/
+		return null;
 	}
+		
+	public int getQuantMaxApostadores() 
+	{
+		return super.getQuantMaxApostadores();
+	}
+
+	public int getQuantMaxApostas() 
+	{
+		return super.getQuantMaxApostas();
+	}
+
+	public float getValorMinApostas() 
+	{
+		return super.getValorMinApostas();
+	}
+
+	public float getValorMaxApostas() 
+	{
+		return super.getValorMaxApostas();
+	}
+	
+	public GerenciadorResultado getGerenciadorResultado() 
+	{
+		return super.getGerenciadorResultado();
+	}
+	
+	public ArrayList<ObjetoAposta> getObjetosAposta() 
+	{
+		return super.getObjetosAposta();
+	}
+	
 }

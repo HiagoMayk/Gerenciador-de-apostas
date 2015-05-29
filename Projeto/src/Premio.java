@@ -3,6 +3,11 @@
 public class Premio
 {
 	private float premio;
+	
+	public Premio(float premio) 
+	{
+		this.premio = premio;
+	}
 
 	public float getPremio() 
 	{
