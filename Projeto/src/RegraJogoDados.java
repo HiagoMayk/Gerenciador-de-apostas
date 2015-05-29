@@ -2,16 +2,18 @@ import java.util.ArrayList;
 
 public class RegraJogoDados extends RegraJogo 
 {
-	public void RegrasJogo()
+	public RegraJogoDados()
 	{	
 		//Esse código vai deposi para o Regrajogo Abstrato
 		IO io = new EntradaSaida();
+		
 		super.setQuantMaxApostadores(io.quantMaxApostadores());
 		super.setQuantMaxApostas(io.quantMaxApostas());
 		super.setValorMaxApostas(io.valorMaxApostas());
 		super.setValorMinApostas(io.valorMinApostas());
 		super.setObjetosAposta(io.getObjetosAposta());
 		super.setTabelaPremiacao(io.getTebelaPremiacao());
+		super.setApostadores(io.getApostadores());
 	}
 	
 	public void aplicarRegraJogo() 
@@ -114,7 +116,7 @@ public class RegraJogoDados extends RegraJogo
 		return super.getGerenciadorResultado();
 	}
 	
-	public ArrayList<ObjetoAposta> getObjetosAposta() 
+	public ArrayList<ObjetoAposta> getObjetosAposta()
 	{
 		return super.getObjetosAposta();
 	}

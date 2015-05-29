@@ -9,7 +9,7 @@ public abstract class RegraJogo implements IRegraJogo
 	private int quantMaxApostas;
 	private float valorMaxApostas;
 	private float valorMinApostas;
-	private ArrayList<ObjetoAposta> objetos; 
+	private ArrayList<ObjetoAposta> objetos;
 	private Premiacao premiacao;				//Uma tabela de valores a ser ganho por colocaçães
 	private GerenciadorResultado gerenciadorResultado;
 	private ArrayList<Apostador> apostadores;
@@ -98,6 +98,11 @@ public abstract class RegraJogo implements IRegraJogo
 	public ArrayList<ObjetoAposta> getObjetosAposta() 
 	{
 		return objetos;
+	}
+	
+	public ArrayList<Apostador> getApostadores() 
+	{
+		return apostadores;
 	}
 	
 	public void aplicarRegraJogo() 

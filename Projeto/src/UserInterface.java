@@ -19,11 +19,19 @@ public class UserInterface
 	{	
 		regraJogo.aplicarRegraJogo(); //Falta implementar
 		
+		
 		System.out.println("Objetos APOSTA");
 		
 		for(int i = 0; i < regraJogo.getObjetosAposta().size(); i++)
 		{	
-			//System.out.println(regraJogo.getObjetosAposta().get(i).getNome());
+			System.out.println(regraJogo.getObjetosAposta().get(i).getNome());
+		}
+		
+		System.out.println("Apostadores");
+		for(int i = 0; i < regraJogo.getApostadores().size(); i++)
+		{	
+			for(int j = 0; j < regraJogo.getApostadores().get(i).getGerenciadorAposta().getApostas().size(); j++)
+				System.out.println(regraJogo.getApostadores().get(i).getNome() + " ------- " + regraJogo.getApostadores().get(i).getGerenciadorAposta().getApostas().get(j).getObjeto().getNome() + " ------- " + regraJogo.getApostadores().get(i).getGerenciadorAposta().getApostas().get(j).getValor());
 		}
 		
 		/*
