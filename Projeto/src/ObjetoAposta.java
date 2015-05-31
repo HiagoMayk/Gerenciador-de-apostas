@@ -17,6 +17,4 @@ public class ObjetoAposta
 		this.nome = nome;
 	}
 
-	
-
 }

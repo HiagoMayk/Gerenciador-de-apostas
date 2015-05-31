@@ -6,17 +6,27 @@ public class UserInterface
 {
 	//private GerenciadorApostador gerenciadorApostador;
 	private GerenciadorResultado gerenciadorResultado;
-	private RegraJogo regraJogo;
+	//private RegraJogo regraJogo;
 	
 	public UserInterface()
 	{
-		regraJogo = new RegraJogoDados();
+		//regraJogo = new RegraJogoDados();
 		//gerenciadorApostador = new GerenciadorApostador();
 		gerenciadorResultado = new GerenciadorResultado();
 	}
 	
 	public void iniciarInterface()
 	{	
+		gerenciadorResultado.obterResultado();
+		for(int i = 0; i < gerenciadorResultado.getResultado().getClassificacao().size(); i++)
+		{	
+			System.out.println(gerenciadorResultado.getResultado().getClassificacao().get(i).getNome());
+		}
+		
+		/*
+		 * primeira implementação
+		 * 
+		 * 
 		boolean verifica = regraJogo.aplicarRegraJogo();
 		if( verifica == true)
 		{
@@ -33,14 +43,13 @@ public class UserInterface
 				for(int j = 0; j < regraJogo.getApostadores().get(i).getGerenciadorAposta().getApostas().size(); j++)
 					System.out.println(regraJogo.getApostadores().get(i).getNome() + " ------- " + regraJogo.getApostadores().get(i).getGerenciadorAposta().getApostas().get(j).getObjeto().getNome() + " ------- " + regraJogo.getApostadores().get(i).getGerenciadorAposta().getApostas().get(j).getValor());
 			}
-		}else{
+		}
+		else
+		{
 			System.out.println("dados inválidos");
 		}
 		
-		/*
-		 * primeira implementação
-		 * 
-		 * 
+		
 		String nome, objetoAposta;
 		float valor;
 		int id, indexAposta;
@@ -131,9 +140,7 @@ public class UserInterface
 					
 				
 			}
-			
 		}
-		
 	}
 
 	public void novoApostador(String nome) 
@@ -178,7 +185,6 @@ public class UserInterface
 	{
 		UserInterface u = new UserInterface();
 		u.iniciarInterface();
-		
 	}
 
 }

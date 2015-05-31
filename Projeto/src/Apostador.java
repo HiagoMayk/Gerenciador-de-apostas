@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Apostador
 {
+	
 	private String nome;
 	private int idApostador;
 	private GerenciadorAposta gerenciadorAposta;
@@ -37,4 +38,5 @@ public class Apostador
 	{
 		return gerenciadorAposta;
 	}
+	
 }

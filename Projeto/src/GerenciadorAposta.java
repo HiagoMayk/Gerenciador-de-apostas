@@ -1,11 +1,8 @@
 import java.util.ArrayList;
 
-
 public class GerenciadorAposta
 {	
-	
 	public IDAOAposta apostasDAO;
-	
 	
 	public GerenciadorAposta()
 	{
@@ -27,12 +24,11 @@ public class GerenciadorAposta
 		else System.out.println("APOSTA INVALIDA");
 		*/
 		
-		apostasDAO.addAposta(novaAposta);
-		
-		
+		apostasDAO.addAposta(novaAposta);	
 	}
 	
-	public ArrayList<Aposta> getApostas() {
+	public ArrayList<Aposta> getApostas() 
+	{
 		return apostasDAO.getApostas();
 	}
 
@@ -40,4 +36,5 @@ public class GerenciadorAposta
 	{
 		apostasDAO.removerAposta(index);
 	}
+	
 }

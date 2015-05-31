@@ -6,7 +6,6 @@ public class RegraJogoDados extends RegraJogo
 	{			
 		//Esse código vai deposi para o Regrajogo Abstrato
 		IO io = new EntradaSaida();
-		
 		super.setQuantMaxApostadores(io.quantMaxApostadores());
 		super.setQuantMaxApostas(io.quantMaxApostas());
 		super.setValorMaxApostas(io.valorMaxApostas());
@@ -14,6 +13,7 @@ public class RegraJogoDados extends RegraJogo
 		super.setObjetosAposta(io.getObjetosAposta());
 		super.setTabelaPremiacao(io.getTebelaPremiacao());
 		super.setApostadores(io.getApostadores());
+		super.setObjetosGanhadores(io.getObjetosGanhadores());
 	}
 	
 	public boolean aplicarRegraJogo()

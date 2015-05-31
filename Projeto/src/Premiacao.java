@@ -17,7 +17,6 @@ public class Premiacao
 	public void setPremios(ArrayList<Premio> premios) 
 	{
 		this.premios = premios;
-	}
-	
+	}	
 	
 }

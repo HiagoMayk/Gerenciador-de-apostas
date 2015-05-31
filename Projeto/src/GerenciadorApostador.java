@@ -3,7 +3,6 @@ import java.util.ArrayList;
 
 public class GerenciadorApostador 
 {
-
 	public IDAOApostador apostadoresDAO;
 	public int id;
 	
@@ -16,7 +15,6 @@ public class GerenciadorApostador
 		id ++;
 	}
 	
-	
 	//Pode-se inserir um apostador sem ele ter uma aposta associada, porém toda aposta deve ter um apostador associado
 	public void novoApostador(String nome) 
 	{
@@ -24,7 +22,6 @@ public class GerenciadorApostador
 		incrementaID();
 		apostadoresDAO.addApostador(apostador);
 	}
-
 		
 	//Remove apostador pelo seu id
 	public void removerApostador(int idApostador)
@@ -35,7 +32,6 @@ public class GerenciadorApostador
 	public ArrayList<Apostador> getApostadores() {
 		return apostadoresDAO.getApostadores();
 	}
-
 		
 	//Retorna um apostador pelo seu id
 	public Apostador getApostador(int idApostador) 
@@ -43,4 +39,5 @@ public class GerenciadorApostador
 		return apostadoresDAO.procurarApostador(idApostador);
 	
 	}
+	
 }

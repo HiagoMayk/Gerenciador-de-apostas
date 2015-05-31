@@ -6,14 +6,12 @@ public class EntradaSaida implements IO
 	public void obterEntrada()
 	{
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void obtersaida()
 	{
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -98,7 +96,8 @@ public class EntradaSaida implements IO
 	}
 
 	@Override
-	public Premiacao getTebelaPremiacao() {
+	public Premiacao getTebelaPremiacao() 
+	{
 		// TODO Auto-generated method stub
 		Premiacao premiacao = new Premiacao();
 		ArrayList<Premio> premios = new ArrayList<Premio>();
@@ -107,6 +106,20 @@ public class EntradaSaida implements IO
 		premios.add(premio);
 		premiacao.setPremios(premios);
 		return premiacao;
+	}
+	
+	@Override
+	//Retorna um ArrayList dos objetos ganhadores em sua ordem
+	public ArrayList<ObjetoAposta> getObjetosGanhadores()
+	{
+		ArrayList<ObjetoAposta> objetosGanhadores = new ArrayList<ObjetoAposta>();
+		ObjetoAposta objeto = new ObjetoAposta("4");
+		objetosGanhadores.add(objeto);
+		
+		objeto = new ObjetoAposta("1");
+		objetosGanhadores.add(objeto);
+		
+		return objetosGanhadores;
 	}
 	
 }

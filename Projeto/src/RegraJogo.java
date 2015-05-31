@@ -13,6 +13,7 @@ public abstract class RegraJogo implements IRegraJogo
 	private Premiacao premiacao;				//Uma tabela de valores a ser ganho por colocaçães
 	private GerenciadorResultado gerenciadorResultado;
 	private ArrayList<Apostador> apostadores;
+	private ArrayList<ObjetoAposta> objetosGanhadores;
 	
 	public void RegrasJogo()
 	{	
@@ -20,6 +21,7 @@ public abstract class RegraJogo implements IRegraJogo
 		premiacao = new Premiacao();
 		gerenciadorResultado = new GerenciadorResultado();
 		apostadores = new ArrayList<Apostador>();
+		objetosGanhadores = new ArrayList<ObjetoAposta>();
 		
 		/*
 		 * Não consegui inicializar aqui, pois o super deve esta na promeira linha do contrutor da classe
@@ -67,6 +69,11 @@ public abstract class RegraJogo implements IRegraJogo
 	public void setApostadores(ArrayList<Apostador> apostadores)
 	{
 		this.apostadores = apostadores;
+	}
+	
+	public void setObjetosGanhadores(ArrayList<ObjetoAposta> objetosGanhadores)
+	{
+		this.objetosGanhadores = objetosGanhadores;
 	}
 	
 	public int getQuantMaxApostadores() 
@@ -125,6 +132,11 @@ public abstract class RegraJogo implements IRegraJogo
 	public ArrayList<Premio> getTabelaPremiacao() 
 	{
 		return premiacao.getPremios();
+	}
+	
+	public ArrayList<ObjetoAposta> getObjetosGanhadores()
+	{
+		return objetosGanhadores;
 	}
 
 }
