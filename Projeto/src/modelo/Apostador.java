@@ -1,17 +1,19 @@
-import java.util.ArrayList;
+package modelo;
+
+import dados.DAOAposta;
+import dados.IDAOAposta;
 
 public class Apostador
 {
-	
 	private String nome;
 	private int idApostador;
-	private GerenciadorAposta gerenciadorAposta;
+	private IDAOAposta apostasDAO;
 
 	public Apostador(String nome, int idApostador) 
 	{
 		this.nome = nome;
 		this.idApostador = idApostador;
-		gerenciadorAposta = new GerenciadorAposta();
+		apostasDAO = new DAOAposta();
 	}
 	
 	public String getNome() 
@@ -34,9 +36,9 @@ public class Apostador
 		this.idApostador = idApostador;
 	}
 	
-	public GerenciadorAposta getGerenciadorAposta()
+	public DAOAposta getDAOAposta()
 	{
-		return gerenciadorAposta;
+		return (DAOAposta) apostasDAO;
 	}
 	
 }

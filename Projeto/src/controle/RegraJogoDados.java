@@ -1,4 +1,10 @@
+package controle;
 import java.util.ArrayList;
+
+import dados.EntradaSaida;
+import dados.IO;
+import modelo.ObjetoAposta;
+import modelo.Premio;
 
 public class RegraJogoDados extends RegraJogo 
 {
@@ -16,55 +22,6 @@ public class RegraJogoDados extends RegraJogo
 		super.setObjetosGanhadores(io.getObjetosGanhadores());
 	}
 	
-	public boolean aplicarRegraJogo()
-	{
-		if((verificarRegrasAposta() && verificarManeiraAposta()) == true)
-		{
-			return true;
-		}
-		return false;
-	}
-	
-	//Regras gerais de apostas
-	public boolean verificarRegrasAposta() 
-	{
-		boolean pertence = true;
-		
-		for(int i = 0; i < getApostadores().size(); i++)
-		{
-			//Se a quantidade de apostas é maior que o minimo possível
-			if (getQuantMaxApostas() < getApostadores().get(i).getGerenciadorAposta().getApostas().size())
-			{
-				return false;
-			}
-			
-			//Se o valor das apostas está na faixa determinada
-			for(int j = 0; j < getApostadores().get(i).getGerenciadorAposta().getApostas().size(); j++)
-			{
-				if (getApostadores().get(i).getGerenciadorAposta().getApostas().get(j).getValor() < getValorMinApostas() ||
-					getValorMaxApostas() < getApostadores().get(i).getGerenciadorAposta().getApostas().get(j).getValor())
-				{
-					return false;	
-				}
-				
-				pertence = false;
-				//Se as apostas do usuário está no domínio de objetos de aposta do jogo
-				for(int k = 0; k < getObjetosAposta().size(); k++)
-				{
-					if(getObjetosAposta().get(k).getNome().equals(getApostadores().get(i).getGerenciadorAposta().getApostas().get(j).getObjeto().getNome()))
-					{
-						pertence = true;
-					}	
-				}
-				
-				if(pertence == false){
-					return false;
-				}
-			}
-		}
-		return true && pertence;
-	}
-	
 	//Não pode apostar no mesmo objeto que outra pessoa já tenha apostado
 	public boolean verificarManeiraAposta() 
 	{
@@ -74,14 +31,14 @@ public class RegraJogoDados extends RegraJogo
 		{
 			for(int l = 0; l < getApostadores().size(); l++)
 			{
-				for(int j = 0; j < getApostadores().get(i).getGerenciadorAposta().getApostas().size(); j++)
+				for(int j = 0; j < getApostadores().get(i).getDAOAposta().getApostas().size(); j++)
 				{
 					pertence = true;
 					if(i != l) //Não deve comparar com ele mesmo
 					{
-						for(int k = 0; k < getApostadores().get(l).getGerenciadorAposta().getApostas().size(); k++)
+						for(int k = 0; k < getApostadores().get(l).getDAOAposta().getApostas().size(); k++)
 						{
-							if(getApostadores().get(i).getGerenciadorAposta().getApostas().get(j).getObjeto().getNome().equals(getApostadores().get(l).getGerenciadorAposta().getApostas().get(k).getObjeto().getNome()))
+							if(getApostadores().get(i).getDAOAposta().getApostas().get(j).getObjeto().getNome().equals(getApostadores().get(l).getDAOAposta().getApostas().get(k).getObjeto().getNome()))
 							{
 								pertence =  false;
 							}

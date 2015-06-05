@@ -1,19 +1,15 @@
+package dados;
+import modelo.Aposta;
+
 import java.util.ArrayList;
+
+import modelo.Apostador;
+import modelo.ObjetoAposta;
+import modelo.Premiacao;
+import modelo.Premio;
 
 public class EntradaSaida implements IO
 {
-	@Override
-	public void obterEntrada()
-	{
-		// TODO Auto-generated method stub
-	}
-
-	@Override
-	public void obtersaida()
-	{
-		// TODO Auto-generated method stub
-	}
-
 	@Override
 	public ArrayList<ObjetoAposta> getObjetosAposta() 
 	{
@@ -44,27 +40,33 @@ public class EntradaSaida implements IO
 	public ArrayList<Apostador> getApostadores()
 	{
 		// TODO Auto-generated method stub
-		GerenciadorApostador gerenciadorApostador = new GerenciadorApostador();
+		IDAOApostador apostadoresDAO = new DAOApostador();
 		
-		gerenciadorApostador.novoApostador("Mayk");
-		gerenciadorApostador.getApostador(0).getGerenciadorAposta().inserirAposta("1", 10);
+		apostadoresDAO.addApostador("Mayk");
+		Aposta aposta = new Aposta("1", 10);
+		apostadoresDAO.procurarApostador(0).getDAOAposta().addAposta(aposta);
 		
-		gerenciadorApostador.novoApostador("Stefano");
-		gerenciadorApostador.getApostador(1).getGerenciadorAposta().inserirAposta("2", 10);
+		apostadoresDAO.addApostador("Stefano");
+		aposta = new Aposta("2", 10);
+		apostadoresDAO.procurarApostador(1).getDAOAposta().addAposta(aposta);
 		
-		gerenciadorApostador.novoApostador("Lilian");
-		gerenciadorApostador.getApostador(2).getGerenciadorAposta().inserirAposta("3", 10);
+		apostadoresDAO.addApostador("Lilian");
+		aposta = new Aposta("3", 10);
+		apostadoresDAO.procurarApostador(2).getDAOAposta().addAposta(aposta);
 		
-		gerenciadorApostador.novoApostador("Hiago");
-		gerenciadorApostador.getApostador(3).getGerenciadorAposta().inserirAposta("4", 10);
+		apostadoresDAO.addApostador("Hiago");
+		aposta =new Aposta("4", 10);
+		apostadoresDAO.procurarApostador(3).getDAOAposta().addAposta(aposta);
 		
-		gerenciadorApostador.novoApostador("Momo");
-		gerenciadorApostador.getApostador(4).getGerenciadorAposta().inserirAposta("5", 10);
+		apostadoresDAO.addApostador("Momo");
+		aposta =new Aposta("5", 10);
+		apostadoresDAO.procurarApostador(4).getDAOAposta().addAposta(aposta);
 		
-		gerenciadorApostador.novoApostador("Loss");
-		gerenciadorApostador.getApostador(5).getGerenciadorAposta().inserirAposta("6", 10);
+		apostadoresDAO.addApostador("Loss");
+		aposta =new Aposta("6", 10);
+		apostadoresDAO.procurarApostador(5).getDAOAposta().addAposta(aposta);
 		
-		return gerenciadorApostador.getApostadores();
+		return apostadoresDAO.getApostadores();
 	}
 
 	@Override
@@ -114,9 +116,6 @@ public class EntradaSaida implements IO
 	{
 		ArrayList<ObjetoAposta> objetosGanhadores = new ArrayList<ObjetoAposta>();
 		ObjetoAposta objeto = new ObjetoAposta("4");
-		objetosGanhadores.add(objeto);
-		
-		objeto = new ObjetoAposta("1");
 		objetosGanhadores.add(objeto);
 		
 		return objetosGanhadores;

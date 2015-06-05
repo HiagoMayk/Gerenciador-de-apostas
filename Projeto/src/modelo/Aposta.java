@@ -1,6 +1,7 @@
+package modelo;
+
 public class Aposta 
 {
-	
 	private ObjetoAposta objeto;
 	private float valor;
 	
@@ -20,7 +21,7 @@ public class Aposta
 		this.objeto = objeto;
 	}
 
-	public Float getValor() 
+	public float getValor() 
 	{
 		return valor;
 	}

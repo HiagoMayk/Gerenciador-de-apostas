@@ -1,7 +1,11 @@
+package dados;
 import java.util.ArrayList;
+
+import modelo.Apostador;
 
 public class DAOApostador implements IDAOApostador
 {
+	public int id;
 	
 	private ArrayList<Apostador> apostadores;
 	
@@ -10,8 +14,14 @@ public class DAOApostador implements IDAOApostador
 		apostadores = new ArrayList<Apostador>();
 	}
 	
-	public void addApostador(Apostador apostador)
+	public void incrementaID(){
+		id ++;
+	}
+	
+	public void addApostador(String nome)
 	{		
+		Apostador apostador = new Apostador(nome, id);
+		incrementaID();
 		apostadores.add(apostador);
 	}
 	

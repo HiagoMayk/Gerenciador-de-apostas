@@ -1,4 +1,7 @@
+package dados;
 import java.util.ArrayList;
+
+import modelo.Aposta;
 
 public interface IDAOAposta 
 {

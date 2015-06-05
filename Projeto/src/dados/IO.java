@@ -1,10 +1,13 @@
+package dados;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import modelo.Apostador;
+import modelo.ObjetoAposta;
+import modelo.Premiacao;
+
 public interface IO 
 {
-	public abstract void obterEntrada();
-	public abstract void obtersaida();
 	public abstract ArrayList<ObjetoAposta> getObjetosAposta();
 	public abstract ArrayList<Apostador> getApostadores();
 	public abstract int quantMaxApostadores();

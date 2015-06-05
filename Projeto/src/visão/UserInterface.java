@@ -1,6 +1,9 @@
+package visão;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import controle.GerenciadorResultado;
 
 public class UserInterface 
 {
@@ -180,7 +183,6 @@ public class UserInterface
 		*/
 	}
 	
-		
 	public static void main(String args[]) throws IOException
 	{
 		UserInterface u = new UserInterface();

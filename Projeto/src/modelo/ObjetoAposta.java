@@ -1,3 +1,5 @@
+package modelo;
+
 public class ObjetoAposta 
 {
 	private String nome;

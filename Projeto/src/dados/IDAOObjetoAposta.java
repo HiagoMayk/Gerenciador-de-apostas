@@ -1,3 +1,5 @@
+package dados;
+import modelo.ObjetoAposta;
 
 public interface IDAOObjetoAposta 
 {
