@@ -25,37 +25,46 @@ public class RegraJogoCavalos extends RegraJogo
 		super.setObjetosGanhadores(io.getObjetosGanhadores());
 	}
 	
-	//Não pode apostar no mesmo objeto que outra pessoa já tenha apostado
+	/*
+	 * Verifica a maneira de apostar de cada apostador e se 
+	 * aquantidade de cavalos bate com a quantidade exigida 
+	 * por uma determinada maneira de aposta.
+	 * 
+	 */
 	public boolean verificarManeiraAposta() 
 	{
-		/*
-	}
-		boolean pertence = true;
-
 		for(int i = 0; i < getApostadores().size(); i++)
 		{
-			for(int l = 0; l < getApostadores().size(); l++)
+			for(int j = 0; j < getApostadores().get(i).getDAOAposta().getApostas().size(); j++)
 			{
-				for(int j = 0; j < getApostadores().get(i).getDAOAposta().getApostas().size(); j++)
+				if((getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Vencedor") || 
+					getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Placer")) &&
+				    getApostadores().get(i).getDAOAposta().getApostas().get(j).getObjetosAposta().size() != 1)
 				{
-					pertence = true;
-					if(i != l) //Não deve comparar com ele mesmo
-					{
-						for(int k = 0; k < getApostadores().get(l).getDAOAposta().getApostas().size(); k++)
-						{
-							if(getApostadores().get(i).getDAOAposta().getApostas().get(j).getObjetosAposta().get(0).getNome().equals(getApostadores().get(l).getDAOAposta().getApostas().get(k).getObjetosAposta().get(0).getNome()))
-							{
-								pertence =  false;
-							}
-						}
-						if(pertence == false){
-							return false;
-						}
-					}
+					System.out.println("Problema na maneira de aposta Vencedor/Placer");
+					return false;
 				}
+				else if((getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Dupla") ||
+						 getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Exata")) &&
+						 getApostadores().get(i).getDAOAposta().getApostas().get(j).getObjetosAposta().size() != 2)
+				{
+							System.out.println("Problema na maneira de aposta Dupla/Exata");
+							return false;
+				}
+				else if(getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Trifeta") &&
+						   getApostadores().get(i).getDAOAposta().getApostas().get(j).getObjetosAposta().size() != 3)
+				{
+							System.out.println("Problema na maneira de aposta Trifeta");
+							return false;
+				}
+				else if(getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Quadrifeta") &&
+						   getApostadores().get(i).getDAOAposta().getApostas().get(j).getObjetosAposta().size() != 4)
+				{
+							System.out.println("Problema na maneira de aposta Quadrifeta");
+							return false;
+				}		
 			}
 		}
-		*/
 		return true;
 	}
 	

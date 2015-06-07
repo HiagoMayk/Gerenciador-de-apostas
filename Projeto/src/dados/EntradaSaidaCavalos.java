@@ -43,18 +43,18 @@ public class EntradaSaidaCavalos implements IO
 	public ArrayList<Apostador> getApostadores()
 	{
 		// TODO Auto-generated method stub
-		/*Maneira: Vencedor*/
-		
 		IDAOApostador apostadoresDAO = new DAOApostador();
 		
 		/*Maneira: Vencedor*/
 		ArrayList<ObjetoAposta> objetos = new ArrayList<ObjetoAposta>();
 		ObjetoAposta objeto = new ObjetoAposta("C1");
+		objetos.add(objeto);
+		//objeto = new ObjetoAposta("C3");   //Força erro ao adicionar mais de 1 
+		//objetos.add(objeto);				 //objeto de aposta na maneira vendcedor
 		Aposta aposta = new Aposta();
 		aposta.setManeira("Vencedor");
-		objetos.add(objeto);
-		apostadoresDAO.addApostador("Mayk");
 		aposta.setAposta(objetos, 10);
+		apostadoresDAO.addApostador("Mayk");
 		apostadoresDAO.procurarApostador(0).getDAOAposta().addAposta(aposta);
 		
 		objetos = new ArrayList<ObjetoAposta>();
@@ -258,7 +258,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C2");
 		objetos.add(objeto);	
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Exata");
 		apostadoresDAO.addApostador("Mayk");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(0).getDAOAposta().addAposta(aposta);
@@ -269,7 +269,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C7");
 		objetos.add(objeto);	
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Exata");
 		apostadoresDAO.addApostador("Stefano");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(1).getDAOAposta().addAposta(aposta);
@@ -280,7 +280,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C6");
 		objetos.add(objeto);	
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Exata");
 		apostadoresDAO.addApostador("Lilian");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(2).getDAOAposta().addAposta(aposta);
@@ -291,7 +291,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C5");
 		objetos.add(objeto);	
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Exata");
 		apostadoresDAO.addApostador("Hiago");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(3).getDAOAposta().addAposta(aposta);
@@ -302,7 +302,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C2");
 		objetos.add(objeto);	
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Exata");
 		apostadoresDAO.addApostador("Momo");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(4).getDAOAposta().addAposta(aposta);
@@ -313,7 +313,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C3");
 		objetos.add(objeto);	
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Exata");
 		apostadoresDAO.addApostador("Loss");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(5).getDAOAposta().addAposta(aposta);
@@ -324,90 +324,12 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C7");
 		objetos.add(objeto);	
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Exata");
 		apostadoresDAO.addApostador("Loss");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(5).getDAOAposta().addAposta(aposta);
 		
-		/*Maneira: Exata*/
-		objetos = new ArrayList<ObjetoAposta>();
-		objeto = new ObjetoAposta("C5");
-		objetos.add(objeto);
-		objeto = new ObjetoAposta("C2");
-		objetos.add(objeto);	
-		aposta = new Aposta();
-		aposta.setManeira("Placer");
-		apostadoresDAO.addApostador("Mayk");
-		aposta.setAposta(objetos, 10);
-		apostadoresDAO.procurarApostador(0).getDAOAposta().addAposta(aposta);
-		
-		objetos = new ArrayList<ObjetoAposta>();
-		objeto = new ObjetoAposta("C6");
-		objetos.add(objeto);
-		objeto = new ObjetoAposta("C7");
-		objetos.add(objeto);	
-		aposta = new Aposta();
-		aposta.setManeira("Placer");
-		apostadoresDAO.addApostador("Stefano");
-		aposta.setAposta(objetos, 10);
-		apostadoresDAO.procurarApostador(1).getDAOAposta().addAposta(aposta);
-		
-		objetos = new ArrayList<ObjetoAposta>();
-		objeto = new ObjetoAposta("C3");
-		objetos.add(objeto);
-		objeto = new ObjetoAposta("C6");
-		objetos.add(objeto);	
-		aposta = new Aposta();
-		aposta.setManeira("Placer");
-		apostadoresDAO.addApostador("Lilian");
-		aposta.setAposta(objetos, 10);
-		apostadoresDAO.procurarApostador(2).getDAOAposta().addAposta(aposta);
-		
-		objetos = new ArrayList<ObjetoAposta>();
-		objeto = new ObjetoAposta("C7");
-		objetos.add(objeto);
-		objeto = new ObjetoAposta("C5");
-		objetos.add(objeto);	
-		aposta = new Aposta();
-		aposta.setManeira("Placer");
-		apostadoresDAO.addApostador("Hiago");
-		aposta.setAposta(objetos, 10);
-		apostadoresDAO.procurarApostador(3).getDAOAposta().addAposta(aposta);
-		
-		objetos = new ArrayList<ObjetoAposta>();
-		objeto = new ObjetoAposta("C1");
-		objetos.add(objeto);
-		objeto = new ObjetoAposta("C2");
-		objetos.add(objeto);	
-		aposta = new Aposta();
-		aposta.setManeira("Placer");
-		apostadoresDAO.addApostador("Momo");
-		aposta.setAposta(objetos, 10);
-		apostadoresDAO.procurarApostador(4).getDAOAposta().addAposta(aposta);
-		
-		objetos = new ArrayList<ObjetoAposta>();
-		objeto = new ObjetoAposta("C4");
-		objetos.add(objeto);
-		objeto = new ObjetoAposta("C3");
-		objetos.add(objeto);	
-		aposta = new Aposta();
-		aposta.setManeira("Placer");
-		apostadoresDAO.addApostador("Loss");
-		aposta.setAposta(objetos, 10);
-		apostadoresDAO.procurarApostador(5).getDAOAposta().addAposta(aposta);
-		
-		objetos = new ArrayList<ObjetoAposta>();
-		objeto = new ObjetoAposta("C5");
-		objetos.add(objeto);
-		objeto = new ObjetoAposta("C7");
-		objetos.add(objeto);	
-		aposta = new Aposta();
-		aposta.setManeira("Placer");
-		apostadoresDAO.addApostador("Loss");
-		aposta.setAposta(objetos, 10);
-		apostadoresDAO.procurarApostador(5).getDAOAposta().addAposta(aposta);
-		
-		/*Maneira: Quadrifeta*/
+		/*Maneira: Trifeta*/
 		objetos = new ArrayList<ObjetoAposta>();
 		objeto = new ObjetoAposta("C5");
 		objetos.add(objeto);
@@ -416,7 +338,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C7");
 		objetos.add(objeto);
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Trifeta");
 		apostadoresDAO.addApostador("Mayk");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(0).getDAOAposta().addAposta(aposta);
@@ -429,7 +351,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C2");
 		objetos.add(objeto);
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Trifeta");
 		apostadoresDAO.addApostador("Stefano");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(1).getDAOAposta().addAposta(aposta);
@@ -442,7 +364,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C7");
 		objetos.add(objeto);
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Trifeta");
 		apostadoresDAO.addApostador("Lilian");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(2).getDAOAposta().addAposta(aposta);
@@ -455,7 +377,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C4");
 		objetos.add(objeto);
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Trifeta");
 		apostadoresDAO.addApostador("Hiago");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(3).getDAOAposta().addAposta(aposta);
@@ -468,7 +390,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C7");
 		objetos.add(objeto);
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Trifeta");
 		apostadoresDAO.addApostador("Momo");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(4).getDAOAposta().addAposta(aposta);
@@ -481,7 +403,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C7");
 		objetos.add(objeto);
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Trifeta");
 		apostadoresDAO.addApostador("Loss");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(5).getDAOAposta().addAposta(aposta);
@@ -494,7 +416,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C3");
 		objetos.add(objeto);
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Trifeta");
 		apostadoresDAO.addApostador("Loss");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(5).getDAOAposta().addAposta(aposta);
@@ -510,7 +432,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C3");
 		objetos.add(objeto);
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Quadrifeta");
 		apostadoresDAO.addApostador("Mayk");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(0).getDAOAposta().addAposta(aposta);
@@ -525,7 +447,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C3");
 		objetos.add(objeto);
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Quadrifeta");
 		apostadoresDAO.addApostador("Stefano");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(1).getDAOAposta().addAposta(aposta);
@@ -540,7 +462,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C4");
 		objetos.add(objeto);
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Quadrifeta");
 		apostadoresDAO.addApostador("Lilian");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(2).getDAOAposta().addAposta(aposta);
@@ -555,7 +477,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C3");
 		objetos.add(objeto);
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Quadrifeta");
 		apostadoresDAO.addApostador("Hiago");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(3).getDAOAposta().addAposta(aposta);
@@ -570,7 +492,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C3");
 		objetos.add(objeto);
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Quadrifeta");
 		apostadoresDAO.addApostador("Momo");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(4).getDAOAposta().addAposta(aposta);
@@ -585,7 +507,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C5");
 		objetos.add(objeto);
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Quadrifeta");
 		apostadoresDAO.addApostador("Loss");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(5).getDAOAposta().addAposta(aposta);
@@ -600,7 +522,7 @@ public class EntradaSaidaCavalos implements IO
 		objeto = new ObjetoAposta("C4");
 		objetos.add(objeto);
 		aposta = new Aposta();
-		aposta.setManeira("Placer");
+		aposta.setManeira("Quadrifeta");
 		apostadoresDAO.addApostador("Loss");
 		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(5).getDAOAposta().addAposta(aposta);
