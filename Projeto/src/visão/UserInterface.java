@@ -3,9 +3,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import modelo.Premio;
 import controle.GerenciadorResultadoCavalos;
 import controle.GerenciadorResultadoDados;
 import controle.RegraJogo;
+import controle.RegraJogoCavalos;
 import controle.RegraJogoDados;
 
 public class UserInterface
@@ -16,7 +18,7 @@ public class UserInterface
 	
 	public UserInterface()
 	{
-		//regraJogo = new RegraJogoCavalos();
+		regraJogo = new RegraJogoCavalos();
 		//gerenciadorApostador = new GerenciadorApostador();
 		gerenciadorResultado = new GerenciadorResultadoCavalos();
 	}
@@ -24,14 +26,15 @@ public class UserInterface
 	public void iniciarInterface()
 	{	
 		gerenciadorResultado.obterResultado();
-		//regraJogo.calcularTabelaPremiacao();
-		/*
-		for(int i = 0; i < gerenciadorResultado.getResultado().getClassificacao().size(); i++)
+		regraJogo.calcularTabelaPremiacao();
+
+		
+		for(int i = 0; i < regraJogo.getTabelaPremiacao().size(); i++)
 		{	
-			System.out.println(gerenciadorResultado.getResultado().getClassificacao().get(i).getNome());
-			System.out.println(regraJogo.getTabelaPremiacao().get(0).getPremio());
+			//System.out.println(gerenciadorResultado.getResultado().getClassificacao().get(i).getNome());
+			System.out.println(regraJogo.getTabelaPremiacao().get(i).getPremio());
 		}
-		*/
+		
 		
 		/*
 		 * primeira implementação

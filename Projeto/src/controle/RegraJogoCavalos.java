@@ -48,20 +48,20 @@ public class RegraJogoCavalos extends RegraJogo
 						 getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Exata")) &&
 						 getApostadores().get(i).getDAOAposta().getApostas().get(j).getObjetosAposta().size() != 2)
 				{
-							System.out.println("Problema na maneira de aposta Dupla/Exata");
-							return false;
+					System.out.println("Problema na maneira de aposta Dupla/Exata");
+					return false;
 				}
 				else if(getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Trifeta") &&
-						   getApostadores().get(i).getDAOAposta().getApostas().get(j).getObjetosAposta().size() != 3)
+						getApostadores().get(i).getDAOAposta().getApostas().get(j).getObjetosAposta().size() != 3)
 				{
-							System.out.println("Problema na maneira de aposta Trifeta");
-							return false;
+					System.out.println("Problema na maneira de aposta Trifeta");
+					return false;
 				}
 				else if(getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Quadrifeta") &&
-						   getApostadores().get(i).getDAOAposta().getApostas().get(j).getObjetosAposta().size() != 4)
+						getApostadores().get(i).getDAOAposta().getApostas().get(j).getObjetosAposta().size() != 4)
 				{
-							System.out.println("Problema na maneira de aposta Quadrifeta");
-							return false;
+					System.out.println("Problema na maneira de aposta Quadrifeta");
+					return false;
 				}		
 			}
 		}
@@ -70,22 +70,67 @@ public class RegraJogoCavalos extends RegraJogo
 	
 	public void calcularTabelaPremiacao() 
 	{
-		/*
-	}
-		Premiacao premiacao = new Premiacao();
-		int soma = 0;
+		float vencedor = 0;
+		float placer = 0;
+		float dupla = 0;
+		float exata = 0;
+		float trifeta = 0;
+		float quadrifeta = 0;
 		
+		//Esta bugado em algum lugar por aqui (07/06/2015)
 		for(int i = 0; i < getApostadores().size(); i++)
 		{
-			soma += getApostadores().get(i).getDAOAposta().getApostas().get(0).getValor();
+			for(int j = 0; j < getApostadores().get(i).getDAOAposta().getApostas().size(); j++)
+			{
+				if(getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Vencedor"))
+				{
+					vencedor += getApostadores().get(i).getDAOAposta().getApostas().get(j).getValor();
+					System.out.println("vencedor = " + vencedor);
+				}
+				else if((getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Placer")))
+				{
+					placer += getApostadores().get(i).getDAOAposta().getApostas().get(j).getValor();
+					System.out.println("placer = " + placer);
+				}
+				else if((getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Dupla")))
+				{
+					dupla += getApostadores().get(i).getDAOAposta().getApostas().get(j).getValor();
+					System.out.println("dupla = " + dupla);
+				}
+				else if((getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Exata")))
+				{
+					exata += getApostadores().get(i).getDAOAposta().getApostas().get(j).getValor();
+					System.out.println("exata = " + exata);
+				}
+				else if(getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Trifeta"))
+				{
+					trifeta += getApostadores().get(i).getDAOAposta().getApostas().get(j).getValor();
+					System.out.println("trifeta = " + trifeta);
+				}
+				else if(getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Quadrifeta"))
+				{
+					quadrifeta += getApostadores().get(i).getDAOAposta().getApostas().get(j).getValor();
+					System.out.println("quadrifeta = " + quadrifeta);
+				}		
+			}
 		}
 		
+		Premiacao premiacao = new Premiacao();
 		ArrayList<Premio> premios = new ArrayList<Premio>();
-		Premio premio = new Premio(soma);
+		Premio premio = new Premio(vencedor);
+		premios.add(premio);
+		premio = new Premio(placer);
+		premios.add(premio);
+		premio = new Premio(dupla);
+		premios.add(premio);
+		premio = new Premio(exata);
+		premios.add(premio);
+		premio = new Premio(trifeta);
+		premios.add(premio);
+		premio = new Premio(quadrifeta);
 		premios.add(premio);
 		premiacao.setPremios(premios);
 		setTabelaPremiacao(premiacao);
-		*/
 	}
 
 	//Retorna um array list com a ordem da premiação (valores) - no caso só 1 valor pois só um ganha
