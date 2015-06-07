@@ -1,24 +1,35 @@
 package modelo;
 
+import java.util.ArrayList;
+
 public class Aposta 
 {
-	private ObjetoAposta objeto;
+	private String maneira;
+	private ArrayList<ObjetoAposta> objeto;
 	private float valor;
 	
-	public Aposta(String obj, float valor) 
+	public Aposta() 
 	{
-		objeto = new ObjetoAposta(obj);
-		this.valor = valor;
+		objeto = new ArrayList<ObjetoAposta>();
+	}
+	
+	public String getManeira() {
+		return maneira;
 	}
 
-	public ObjetoAposta getObjeto() 
+	public void setManeira(String maneira) {
+		this.maneira = maneira;
+	}
+
+	public ArrayList<ObjetoAposta> getObjetosAposta() 
 	{
 		return objeto;
 	}
 
-	public void setObjeto(ObjetoAposta objeto) 
+	public void setAposta(ArrayList<ObjetoAposta> objeto, float valor) 
 	{
 		this.objeto = objeto;
+		this.valor = valor;
 	}
 
 	public float getValor() 
@@ -26,7 +37,7 @@ public class Aposta
 		return valor;
 	}
 
-	public void setValor(Float valor) 
+	public void setValor(float valor) 
 	{
 		this.valor = valor;
 	}

@@ -10,5 +10,5 @@ public interface IRegraJogo
 	public boolean verificaDominioAposta();
 	public boolean aplicarRegraJogo();
 	public boolean verificarManeiraAposta();
-	public ArrayList<Premio> getTabelaPremiacao();
+	public void calcularTabelaPremiacao();
 }

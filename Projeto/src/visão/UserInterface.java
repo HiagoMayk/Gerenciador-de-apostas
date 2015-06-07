@@ -3,28 +3,35 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import controle.GerenciadorResultado;
+import controle.GerenciadorResultadoCavalos;
+import controle.GerenciadorResultadoDados;
+import controle.RegraJogo;
+import controle.RegraJogoDados;
 
-public class UserInterface 
+public class UserInterface
 {
 	//private GerenciadorApostador gerenciadorApostador;
-	private GerenciadorResultado gerenciadorResultado;
-	//private RegraJogo regraJogo;
+	private GerenciadorResultadoCavalos gerenciadorResultado;
+	private RegraJogo regraJogo;
 	
 	public UserInterface()
 	{
-		//regraJogo = new RegraJogoDados();
+		//regraJogo = new RegraJogoCavalos();
 		//gerenciadorApostador = new GerenciadorApostador();
-		gerenciadorResultado = new GerenciadorResultado();
+		gerenciadorResultado = new GerenciadorResultadoCavalos();
 	}
 	
 	public void iniciarInterface()
 	{	
 		gerenciadorResultado.obterResultado();
+		//regraJogo.calcularTabelaPremiacao();
+		/*
 		for(int i = 0; i < gerenciadorResultado.getResultado().getClassificacao().size(); i++)
 		{	
 			System.out.println(gerenciadorResultado.getResultado().getClassificacao().get(i).getNome());
+			System.out.println(regraJogo.getTabelaPremiacao().get(0).getPremio());
 		}
+		*/
 		
 		/*
 		 * primeira implementação

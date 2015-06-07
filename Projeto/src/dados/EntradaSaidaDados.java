@@ -8,7 +8,7 @@ import modelo.ObjetoAposta;
 import modelo.Premiacao;
 import modelo.Premio;
 
-public class EntradaSaida implements IO
+public class EntradaSaidaDados implements IO
 {
 	@Override
 	public ArrayList<ObjetoAposta> getObjetosAposta() 
@@ -42,28 +42,58 @@ public class EntradaSaida implements IO
 		// TODO Auto-generated method stub
 		IDAOApostador apostadoresDAO = new DAOApostador();
 		
+		ArrayList<ObjetoAposta> objetos = new ArrayList<ObjetoAposta>();
+		ObjetoAposta objeto = new ObjetoAposta("1");
+		Aposta aposta = new Aposta();
+		objetos.add(objeto);
+		
 		apostadoresDAO.addApostador("Mayk");
-		Aposta aposta = new Aposta("1", 10);
+		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(0).getDAOAposta().addAposta(aposta);
 		
+		objetos = new ArrayList<ObjetoAposta>();
+		objeto = new ObjetoAposta("2");
+		aposta = new Aposta();
+		objetos.add(objeto);
+		
 		apostadoresDAO.addApostador("Stefano");
-		aposta = new Aposta("2", 10);
+		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(1).getDAOAposta().addAposta(aposta);
 		
+		objetos = new ArrayList<ObjetoAposta>();
+		objeto = new ObjetoAposta("3");
+		aposta = new Aposta();
+		objetos.add(objeto);
+		
 		apostadoresDAO.addApostador("Lilian");
-		aposta = new Aposta("3", 10);
+		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(2).getDAOAposta().addAposta(aposta);
 		
+		objetos = new ArrayList<ObjetoAposta>();
+		objeto = new ObjetoAposta("4");
+		aposta = new Aposta();
+		objetos.add(objeto);
+		
 		apostadoresDAO.addApostador("Hiago");
-		aposta =new Aposta("4", 10);
+		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(3).getDAOAposta().addAposta(aposta);
 		
+		objetos = new ArrayList<ObjetoAposta>();
+		objeto = new ObjetoAposta("5");
+		aposta = new Aposta();
+		objetos.add(objeto);
+		
 		apostadoresDAO.addApostador("Momo");
-		aposta =new Aposta("5", 10);
+		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(4).getDAOAposta().addAposta(aposta);
 		
+		objetos = new ArrayList<ObjetoAposta>();
+		objeto = new ObjetoAposta("6");
+		aposta = new Aposta();
+		objetos.add(objeto);
+		
 		apostadoresDAO.addApostador("Loss");
-		aposta =new Aposta("6", 10);
+		aposta.setAposta(objetos, 10);
 		apostadoresDAO.procurarApostador(5).getDAOAposta().addAposta(aposta);
 		
 		return apostadoresDAO.getApostadores();
@@ -115,7 +145,7 @@ public class EntradaSaida implements IO
 	public ArrayList<ObjetoAposta> getObjetosGanhadores()
 	{
 		ArrayList<ObjetoAposta> objetosGanhadores = new ArrayList<ObjetoAposta>();
-		ObjetoAposta objeto = new ObjetoAposta("4");
+		ObjetoAposta objeto = new ObjetoAposta("3");
 		objetosGanhadores.add(objeto);
 		
 		return objetosGanhadores;

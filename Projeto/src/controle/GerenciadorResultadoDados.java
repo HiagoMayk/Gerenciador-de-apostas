@@ -1,12 +1,12 @@
 package controle;
 import modelo.Resultado;
 
-public class GerenciadorResultado implements IGerenciadorResultado
+public class GerenciadorResultadoDados implements IGerenciadorResultado
 {
 	private Resultado resultado;
 	private RegraJogo regraJogo;
 	
-	public GerenciadorResultado() 
+	public GerenciadorResultadoDados() 
 	{
 		resultado = new Resultado();
 		regraJogo = new RegraJogoDados();
@@ -29,7 +29,7 @@ public class GerenciadorResultado implements IGerenciadorResultado
 				{
 					for(int j = 0; j < regraJogo.getApostadores().get(i).getDAOAposta().getApostas().size(); j++)
 					{
-						if(regraJogo.getApostadores().get(i).getDAOAposta().getApostas().get(j).getObjeto().getNome().equals(regraJogo.getObjetosGanhadores().get(k).getNome()))
+						if(regraJogo.getApostadores().get(i).getDAOAposta().getApostas().get(j).getObjetosAposta().get(0).getNome().equals(regraJogo.getObjetosGanhadores().get(k).getNome()))
 						{
 							resultado.setColocado(regraJogo.getApostadores().get(i));
 							resultado.setObjetoGanhador(regraJogo.getObjetosGanhadores().get(k));

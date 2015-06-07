@@ -14,6 +14,6 @@ public interface IO
 	public abstract int quantMaxApostas();
 	public abstract float valorMinApostas();
 	public abstract float valorMaxApostas();
-	public abstract Premiacao getTebelaPremiacao();
+	//public abstract Premiacao getTebelaPremiacao();
 	public abstract ArrayList<ObjetoAposta> getObjetosGanhadores();
 }

@@ -17,15 +17,17 @@ public abstract class RegraJogo implements IRegraJogo
 	private float valorMinApostas;
 	private ArrayList<ObjetoAposta> objetos;
 	private Premiacao premiacao;				//Uma tabela de valores a ser ganho por colocaçães
-	private GerenciadorResultado gerenciadorResultado;
+	private GerenciadorResultadoDados gerenciadorResultado;
 	private ArrayList<Apostador> apostadores;
 	private ArrayList<ObjetoAposta> objetosGanhadores;
 	
 	public boolean aplicarRegraJogo()
 	{
+		premiacao = new Premiacao();
 		if((verificaQuantidadeAposta() && verificaFaixaValores() &&
 			verificaDominioAposta() && verificarManeiraAposta()) == true)
 		{
+			System.out.println("todo ok ate aqui!!!");
 			return true;
 		}
 		return false;
@@ -35,12 +37,13 @@ public abstract class RegraJogo implements IRegraJogo
 	{
 		for(int i = 0; i < getApostadores().size(); i++)
 		{
-			//Se a quantidade de apostas é maior que o minimo possível
+			//Se a quantidade de apostas é maior que o maximo possível
 			if (getQuantMaxApostas() < getApostadores().get(i).getDAOAposta().getApostas().size())
 			{
 				return false;
 			}
 		}
+		
 		return true;
 	}
 	
@@ -65,18 +68,21 @@ public abstract class RegraJogo implements IRegraJogo
 	{
 		boolean pertence = true;
 		
-		for(int i = 0; i < getApostadores().size(); i++)
+		for(int i = 0; i < getApostadores().size(); i++) //todos os apostadores
 		{
-			for(int j = 0; j < getApostadores().get(i).getDAOAposta().getApostas().size(); j++)
+			for(int j = 0; j < getApostadores().get(i).getDAOAposta().getApostas().size(); j++) //todas as apostas
 			{
 				pertence = false;
 				//Se as apostas do usuário está no domínio de objetos de aposta do jogo
-				for(int k = 0; k < getObjetosAposta().size(); k++)
+				for(int k = 0; k < getObjetosAposta().size(); k++) // dominio da aposta
 				{
-					if(getObjetosAposta().get(k).getNome().equals(getApostadores().get(i).getDAOAposta().getApostas().get(j).getObjeto().getNome()))
+					for(int z = 0; z < getApostadores().get(i).getDAOAposta().getApostas().get(j).getObjetosAposta().size(); z++)
 					{
-						pertence = true;
-					}	
+						if(getObjetosAposta().get(k).getNome().equals(getApostadores().get(i).getDAOAposta().getApostas().get(j).getObjetosAposta().get(z).getNome()))
+						{
+							pertence = true;
+						}	
+					}
 				}
 				
 				if(pertence == false){
@@ -158,7 +164,7 @@ public abstract class RegraJogo implements IRegraJogo
 		return valorMaxApostas;
 	}
 	
-	public GerenciadorResultado getGerenciadorResultado() 
+	public GerenciadorResultadoDados getGerenciadorResultado() 
 	{
 		return gerenciadorResultado;
 	}
