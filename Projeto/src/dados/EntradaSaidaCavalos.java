@@ -11,7 +11,7 @@ import modelo.Premio;
 public class EntradaSaidaCavalos implements IO
 {
 	@Override
-	public ArrayList<ObjetoAposta> getObjetosAposta() 
+	public ArrayList<ObjetoAposta> getObjetosAposta()
 	{
 		ArrayList<ObjetoAposta> objetos = new ArrayList<ObjetoAposta>();
 		//Adiciona os objetos da aposta
@@ -49,8 +49,6 @@ public class EntradaSaidaCavalos implements IO
 		ArrayList<ObjetoAposta> objetos = new ArrayList<ObjetoAposta>();
 		ObjetoAposta objeto = new ObjetoAposta("C1");
 		objetos.add(objeto);
-		//objeto = new ObjetoAposta("C3");   //Força erro ao adicionar mais de 1 
-		//objetos.add(objeto);				 //objeto de aposta na maneira vendcedor
 		Aposta aposta = new Aposta();
 		aposta.setManeira("Vencedor");
 		aposta.setAposta(objetos, 10);
@@ -114,6 +112,7 @@ public class EntradaSaidaCavalos implements IO
 		/*Maneira: Placer*/
 		objetos = new ArrayList<ObjetoAposta>();
 		objeto = new ObjetoAposta("C5");
+		aposta = new Aposta();
 		objetos.add(objeto);
 		aposta.setManeira("Placer");
 		apostadoresDAO.addApostador("Mayk");

@@ -85,32 +85,32 @@ public class RegraJogoCavalos extends RegraJogo
 				if(getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Vencedor"))
 				{
 					vencedor += getApostadores().get(i).getDAOAposta().getApostas().get(j).getValor();
-					System.out.println("vencedor = " + vencedor);
+					//System.out.println("vencedor = " + vencedor);
 				}
 				else if((getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Placer")))
 				{
 					placer += getApostadores().get(i).getDAOAposta().getApostas().get(j).getValor();
-					System.out.println("placer = " + placer);
+					//System.out.println("placer = " + placer);
 				}
 				else if((getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Dupla")))
 				{
 					dupla += getApostadores().get(i).getDAOAposta().getApostas().get(j).getValor();
-					System.out.println("dupla = " + dupla);
+					//System.out.println("dupla = " + dupla);
 				}
 				else if((getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Exata")))
 				{
 					exata += getApostadores().get(i).getDAOAposta().getApostas().get(j).getValor();
-					System.out.println("exata = " + exata);
+					//System.out.println("exata = " + exata);
 				}
 				else if(getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Trifeta"))
 				{
 					trifeta += getApostadores().get(i).getDAOAposta().getApostas().get(j).getValor();
-					System.out.println("trifeta = " + trifeta);
+					//System.out.println("trifeta = " + trifeta);
 				}
 				else if(getApostadores().get(i).getDAOAposta().getApostas().get(j).getManeira().equals("Quadrifeta"))
 				{
 					quadrifeta += getApostadores().get(i).getDAOAposta().getApostas().get(j).getValor();
-					System.out.println("quadrifeta = " + quadrifeta);
+					//System.out.println("quadrifeta = " + quadrifeta);
 				}		
 			}
 		}

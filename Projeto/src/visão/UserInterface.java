@@ -6,6 +6,8 @@ import java.util.Scanner;
 import modelo.Premio;
 import controle.GerenciadorResultadoCavalos;
 import controle.GerenciadorResultadoDados;
+import controle.IGerenciadorResultado;
+import controle.IRegraJogo;
 import controle.RegraJogo;
 import controle.RegraJogoCavalos;
 import controle.RegraJogoDados;
@@ -13,14 +15,14 @@ import controle.RegraJogoDados;
 public class UserInterface
 {
 	//private GerenciadorApostador gerenciadorApostador;
-	private GerenciadorResultadoCavalos gerenciadorResultado;
-	private RegraJogo regraJogo;
+	private IGerenciadorResultado gerenciadorResultado;
+	private IRegraJogo regraJogo;
 	
 	public UserInterface()
 	{
 		regraJogo = new RegraJogoCavalos();
 		//gerenciadorApostador = new GerenciadorApostador();
-		gerenciadorResultado = new GerenciadorResultadoCavalos();
+		gerenciadorResultado = new GerenciadorResultadoDados();
 	}
 	
 	public void iniciarInterface()
@@ -29,10 +31,10 @@ public class UserInterface
 		regraJogo.calcularTabelaPremiacao();
 
 		
-		for(int i = 0; i < regraJogo.getTabelaPremiacao().size(); i++)
+		for(int i = 0; i < gerenciadorResultado.getResultado().getClassificacao().size(); i++)
 		{	
-			//System.out.println(gerenciadorResultado.getResultado().getClassificacao().get(i).getNome());
-			System.out.println(regraJogo.getTabelaPremiacao().get(i).getPremio());
+			System.out.print(gerenciadorResultado.getResultado().getClassificacao().get(i).getNome());
+			//System.out.println(regraJogo.getTabelaPremiacao().get(i).getPremio());
 		}
 		
 		

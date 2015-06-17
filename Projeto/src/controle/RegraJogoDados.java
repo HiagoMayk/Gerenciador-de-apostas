@@ -54,7 +54,7 @@ public class RegraJogoDados extends RegraJogo
 		return true;
 	}
 	
-	public void calcularTabelaPremiacao() 
+	public void calcularTabelaPremiacao()
 	{
 		Premiacao premiacao = new Premiacao();
 		int soma = 0;

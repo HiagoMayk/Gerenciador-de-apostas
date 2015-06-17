@@ -6,7 +6,7 @@ public class Resultado
 	private ArrayList<Apostador> classificacao;
 	private ArrayList<ObjetoAposta> objetosGanhadores;
 
-	public Resultado() 
+	public Resultado()
 	{
 		classificacao = new ArrayList<Apostador>();
 		objetosGanhadores = new ArrayList<ObjetoAposta>();

@@ -126,7 +126,8 @@ public class EntradaSaidaDados implements IO
 		// TODO Auto-generated method stub
 		return 10;
 	}
-
+	
+	/*
 	@Override
 	public Premiacao getTebelaPremiacao() 
 	{
@@ -139,6 +140,7 @@ public class EntradaSaidaDados implements IO
 		premiacao.setPremios(premios);
 		return premiacao;
 	}
+	*/
 	
 	@Override
 	//Retorna um ArrayList dos objetos ganhadores em sua ordem

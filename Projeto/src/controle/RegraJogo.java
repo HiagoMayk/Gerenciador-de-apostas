@@ -27,7 +27,7 @@ public abstract class RegraJogo implements IRegraJogo
 		if((verificaQuantidadeAposta() && verificaFaixaValores() &&
 			verificaDominioAposta() && verificarManeiraAposta()) == true)
 		{
-			System.out.println("todo ok ate aqui!!!");
+			//System.out.println("todo ok ate aqui!!!");
 			return true;
 		}
 		return false;
